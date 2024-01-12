@@ -1,0 +1,216 @@
+:root {
+  --font-family: "Inter", sans-serif;
+  --primary-color: #3498db;
+  --background-color: #f8f8f8;
+  --default-spacing: 16px;
+  --default-margin: 1.5rem;
+  --medium-margin: 3rem;
+  --larger-margin: 5rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--primary-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+/* Common CSS starts */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--default-spacing);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.title {
+  text-align: center;
+  margin-top: var(--default-margin);
+  color: var(--primary-color);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--default-margin);
+  margin-top: var(--medium-margin);
+  margin-bottom: var(--larger-margin);
+}
+
+.buttons .btn,
+.buttons .btn:active,
+.buttons .btn:focus {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.error-msg {
+  color: #ff4b4b;
+  text-align: center;
+  margin-top: var(--default-margin);
+}
+
+.loading {
+  color: #3498db;
+  text-align: center;
+  margin-top: var(--default-margin);
+  font-size: 20px;
+}
+
+/* Common CSS ends */
+
+/* Search section starts */
+
+.search-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--default-margin);
+}
+
+.search-section .search-input {
+  min-width: 500px;
+  padding: var(--default-spacing);
+  border: 2px solid #3498db;
+  border-radius: 5px;
+  margin-right: 5px; /* Add margin to create space between input and button */
+}
+
+.search-section .search-btn {
+  padding: var(--default-spacing);
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-section .search-btn:hover {
+  background-color: #3498db;
+}
+
+/* Search section ends */
+
+/* Filters section starts */
+
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: var(--default-margin);
+}
+
+.filters > * {
+  padding: 8px 16px;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Filters section ends */
+
+/* Images section starts */
+
+.images {
+  margin-top: var(--medium-margin);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: var(--default-spacing);
+  justify-content: center;
+  align-items: center;
+}
+
+.images .image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.images .image:hover {
+  transform: scale(1.05);
+}
+
+/* Images section ends */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .search-section .search-input {
+    width: 100%;
+    max-width: unset;
+    margin: 0 var(--default-margin);
+  }
+
+  .images {
+    grid-template-columns: 1fr;
+  }
+}
+
+.search-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--default-margin);
+}
+
+.search-section .search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: var(--default-spacing);
+  border: 2px solid #3498db;
+  border-radius: 5px;
+  margin-bottom: 10px; /* Add margin to create space between input and button */
+}
+
+.search-section .search-btn {
+  width: 100%;
+  max-width: 500px;
+  padding: var(--default-spacing);
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-section .search-btn:hover {
+  background-color: #297fb8;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .search-section {
+    flex-direction: row;
+  }
+
+  .search-section .search-input {
+    margin-bottom: 0;
+    margin-right: 5px;
+  }
+}
