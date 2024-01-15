@@ -66,15 +66,16 @@ function App() {
       {errorMsg && <p className='error-msg'>{errorMsg}</p>}
       <div className='search-section'>
         <Form onSubmit={handleSearch} className="d-flex">
+
           <Form.Control
-            type='search'
-            placeholder='Type here to search...'
-            className='search-input'
-            ref={searchInput}
-          />
-          <Button type='submit' className='search-btn'>
-            Search
-          </Button>
+      type='search'
+      placeholder='Type here to search...'
+      className='search-input '
+      ref={searchInput}
+    />
+         <Button type='submit' className='search-btn'>
+      Search
+    </Button>
         
     
         </Form>

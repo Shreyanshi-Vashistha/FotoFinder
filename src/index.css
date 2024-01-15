@@ -83,7 +83,7 @@ body {
 }
 
 .search-section .search-input {
-  min-width: 500px;
+  min-width: 75%;
   padding: var(--default-spacing);
   border: 2px solid #3498db;
   border-radius: 5px;
@@ -161,48 +161,50 @@ body {
 @media (max-width: 480px) {
   .search-section .search-input {
     width: 100%;
-    max-width: unset;
-    margin: 0 var(--default-margin);
+    max-width: none;
+    margin: 0;
+    margin-right: 10px;
   }
 
   .images {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+
+  .search-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--default-margin);
+  }
+
+  .search-section .search-input {
+    width: 100%;
+    max-width: 500px;
+    padding: var(--default-spacing);
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Add margin to create space between input and button */
+  }
+
+  .search-section .search-btn {
+    width: 100%;
+    max-width: 500px;
+    height: 60px;
+
+    padding: var(--default-spacing);
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .search-section .search-btn:hover {
+    background-color: #297fb8;
   }
 }
-
-.search-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: var(--default-margin);
-}
-
-.search-section .search-input {
-  width: 100%;
-  max-width: 500px;
-  padding: var(--default-spacing);
-  border: 2px solid #3498db;
-  border-radius: 5px;
-  margin-bottom: 10px; /* Add margin to create space between input and button */
-}
-
-.search-section .search-btn {
-  width: 100%;
-  max-width: 500px;
-  padding: var(--default-spacing);
-  background-color: #3498db;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.search-section .search-btn:hover {
-  background-color: #297fb8;
-}
-
 /* Responsive adjustments */
 @media (min-width: 768px) {
   .search-section {
@@ -211,6 +213,23 @@ body {
 
   .search-section .search-input {
     margin-bottom: 0;
-    margin-right: 5px;
+    margin-right: 10px;
+  }
+
+  .search-section .search-btn {
+    padding: var(--default-spacing);
+    width: 100%;
+    max-width: 500px;
+    height: 60px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .search-section .search-btn:hover {
+    background-color: #3498db;
   }
 }
